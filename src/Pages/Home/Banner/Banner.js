@@ -1,7 +1,7 @@
 import React from 'react';
 import BannerItems from './BannerItems';
 import img1 from '../../../assets/images/banner/banner1.jpg'
-import img2 from '../../../assets/images/banner/banner2.webp'
+import img2 from '../../../assets/images/banner/banner2.jpg'
 import img3 from '../../../assets/images/banner/banner3.jpg'
 
 const Banner = () => {

@@ -4,7 +4,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 const BannerItems = ({slider}) => {
     const {image, id , prev, next} = slider;
     return (
-        <div id={`slide${id}`} className="carousel-item relative w-full my-12">
+        <div id={`slide${id}`} className="carousel-item relative w-full my-8">
             <div className='carousel-img '>
                 <img src={image} alt='' className="w-full rounded-xl" />
             </div>
