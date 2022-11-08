@@ -1,30 +1,46 @@
-import React from 'react';
-import { FaGithub, FaGoogle, FaLightbulb, FaLinkedin } from 'react-icons/fa';
+import React, { useContext } from 'react';
+import { FaGithub, FaGoogle, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import login from '../../../assets/images/login/login.gif'
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const {signInEmailAndPass} = useContext(AuthContext);
+
+    const handleSignInEmailAndPassword = event =>{
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signInEmailAndPass(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .then(err => console.error(err))
+    }
     return (
         <div>
-            <div className="hero  bg-base-200">
+            <div className="hero py-10  bg-base-200">
                 <div className="hero-content flex-col grid lg:grid-cols-2 lg:flex-row ">
                     <div className="text-center lg:text-left relative">
                     <h1 className="text-4xl w-1/2 font-bold absolute flex text-top transform -translate-y-1/2 left-1/3 right-5 top-12">Login now!</h1>
                     <img className='w-full' src={login} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full shadow-2xl" style={{background:"#ffffffb5"}}>
-                    <div className="card-body">
+                    <form onSubmit={handleSignInEmailAndPassword} className="card-body">
                         <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="text" placeholder="email" className="input input-bordered" />
+                        <input type="email" name='email' placeholder="email" className="input input-bordered" required/>
                         </div>
                         <div className="form-control">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="text" placeholder="password" className="input input-bordered" />
+                        <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
                         <label className="label">
                             <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
                         </label>
@@ -40,7 +56,7 @@ const Login = () => {
                                 <Link className='bg-zinc-400 p-3 mx-1 rounded-full'><FaLinkedin style={{fontSize:'25px'}}/></Link>
                             </div>
                         </div>
-                    </div>
+                    </form>
                     </div>
                 </div>
             </div>
