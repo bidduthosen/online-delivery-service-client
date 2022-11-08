@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import register from '../../../assets/images/register/register.jpg'
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
@@ -15,7 +16,8 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                alert('done')
+                toast.success('Register has ben successfully');
+                form.reset()
             })
             .then(err => console.error(err))
     }

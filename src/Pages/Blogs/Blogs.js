@@ -6,6 +6,8 @@ const Blogs = () => {
     return (
         <div>
             <h1>blog ______{user?.email}</h1>
+            <img src={user?.photoURL} alt="" />
+            <h1>blog ______{user?.displayName}</h1>
         </div>
     );
 };

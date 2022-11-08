@@ -1,11 +1,15 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { FaGithub, FaGoogle, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import login from '../../../assets/images/login/login.gif'
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {signInEmailAndPass} = useContext(AuthContext);
+    const {signInEmailAndPass, signInGoogle} = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider();
 
     const handleSignInEmailAndPassword = event =>{
         event.preventDefault();
@@ -17,8 +21,19 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast.success('login done');
+                form.reset();
             })
             .then(err => console.error(err))
+    }
+    const handleSignGoogle = () =>{
+        signInGoogle(googleProvider)
+            .then(result =>{
+                const user = result.user;
+                console.log('google sign user', user);
+                toast.success('Google sign in done');
+            })
+            .then(err=> console.error(err))
     }
     return (
         <div>
@@ -51,7 +66,7 @@ const Login = () => {
                         <div className='flex justify-between m-5'>
                             <p className='flex items-center	'>Login with-</p>
                             <div className='flex justify-between'>
-                                <Link className='bg-zinc-400 p-3 mx-1 rounded-full'><FaGoogle style={{fontSize:'25px'}}/></Link>
+                                <Link onClick={handleSignGoogle} className='bg-zinc-400 p-3 mx-1 rounded-full'><FaGoogle style={{fontSize:'25px'}}/></Link>
                                 <Link className='bg-zinc-400 p-3 mx-1 rounded-full'><FaGithub style={{fontSize:'25px'}}/></Link>
                                 <Link className='bg-zinc-400 p-3 mx-1 rounded-full'><FaLinkedin style={{fontSize:'25px'}}/></Link>
                             </div>

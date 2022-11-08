@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
@@ -14,7 +15,7 @@ const Header = () => {
             <Link to='/'>Home</Link>
             <Link to="/blog">blog</Link>
             {user && <>
-                <Link to="/blog">My Review</Link>
+                <Link to="/review">My Review</Link>
                 <Link to="/blog">Add Service</Link>
             </>}
         </li>
@@ -43,15 +44,30 @@ const Header = () => {
                 {user ? 
                     <>
                         <div className="dropdown dropdown-end mr-4">
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-16 rounded-full">
-                                <img src="https://placeimg.com/80/80/people"  alt=''/>
-                                </div>
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar  bg-slate-400">
+                                {user?.photoURL ? 
+                                <>
+                                    <div className="w-16 rounded-full">
+                                        <img src={user?.photoURL}  alt=''/>
+                                    </div>
+                                </>
+                                :
+                                <>
+                                    <div className="">
+                                        <FaUser className='flex justify-center items-center' style={{fontSize:'25px'}}></FaUser>
+                                    </div>
+                                </>
+                                }
+                                
                             </label>
                             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                 <li>
                                 <Link className="justify-between">
-                                    Profile
+                                    {user ? 
+                                    <>{user?.displayName}</>
+                                    :
+                                    "Unknown"
+                                    }
                                 </Link>
                                 </li>
                                 <li><Link onClick={handleLogOut}>Logout</Link></li>
