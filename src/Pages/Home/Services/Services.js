@@ -23,7 +23,7 @@ const Services = () => {
                 }
             </div>
            
-            <Link to='/'><button className="btn btn-outline btn-secondary my-8 flex mx-auto">View All <FaAngleDown></FaAngleDown></button></Link>
+            <Link to='/services'><button className="btn btn-outline btn-secondary my-8 flex mx-auto">View All <FaAngleDown></FaAngleDown></button></Link>
         </div>
     );
 };
