@@ -24,7 +24,7 @@ const MyReview = () => {
                 .then(data => {
                     console.log(data)
                     if(data.deletedCount > 0){
-                        toast.success('review remove successfully')
+                        toast.success('Review remove successfully')
                         const remaining = reviews.filter(rev=> rev._id !== id)
                         setReviews(remaining);
                     }
@@ -34,14 +34,20 @@ const MyReview = () => {
     }
     return (
         <div>
-            <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-sky-400  p-4 hover:border-solid">My Review</div>
-            {
-             reviews.map(review => <ReviewRow
-                        key={review._id}
-                        review={review}
-                        handleDelete={handleDelete}
-                    ></ReviewRow>)
-            }
+            {reviews.length > 0 ? 
+            <>
+                <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-sky-400  p-4 hover:border-solid">My Review</div>
+                {
+                reviews.map(review => <ReviewRow
+                            key={review._id}
+                            review={review}
+                            handleDelete={handleDelete}
+                        ></ReviewRow>)
+                }
+            </>
+            : 
+            <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-sky-400  p-4 hover:border-solid">No reviews were added</div>}
+            
         </div>
     );
 };

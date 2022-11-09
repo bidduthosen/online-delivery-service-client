@@ -13,13 +13,22 @@ const CategoryReview = ({title}) => {
 
     return (
         <div>
-            <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-sky-400  p-4 hover:border-solid">Review</div>
-            <div className='md:w-3/5 mx-auto'>
-                {addReview.map(rvw=> <CategoryReviewCart
-                    key={rvw._id}
-                    review={rvw}
-                ></CategoryReviewCart>)}
-            </div>
+            {addReview.length ? 
+            <>
+                <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-sky-400  p-4 hover:border-solid">Review</div>
+                <div className='md:w-3/5 mx-auto'>
+                    {addReview.map(rvw=> <CategoryReviewCart
+                        key={rvw._id}
+                        review={rvw}
+                    ></CategoryReviewCart>)}
+                </div>
+            </>
+            : 
+            <>
+                <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-sky-400  p-4 hover:border-solid">No reviews Informations Please added</div>
+            </>
+            }
+            
         </div>
     );
 };

@@ -9,7 +9,6 @@ const ReviewRow = ({review, handleDelete}) => {
         fetch(`http://localhost:5000/services/${service_id}`)
         .then(res => res.json())
         .then(data => {
-            // console.log("data service-id", data)
             setReviewService(data)
         })
         .catch(err=> console.log(err))
