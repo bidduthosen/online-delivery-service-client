@@ -44,34 +44,35 @@ const Login = () => {
                     <img className='w-full' src={login} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full shadow-2xl" style={{background:"#ffffffb5"}}>
-                    <form onSubmit={handleSignInEmailAndPassword} className="card-body">
-                        <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
-                        </label>
-                        <input type="email" name='email' placeholder="email" className="input input-bordered" required/>
-                        </div>
-                        <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Password</span>
-                        </label>
-                        <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
-                        <label className="label">
-                            <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
-                        </label>
-                        </div>
-                        <div className="form-control mt-6">
-                        <button className="btn btn-primary w-1/5">Login</button>
-                        </div>
-                        <div className='flex justify-between m-5'>
-                            <p className='flex items-center	'>Login with-</p>
-                            <div className='flex justify-between'>
-                                <Link onClick={handleSignGoogle} className='bg-zinc-400 p-3 mx-1 rounded-full'><FaGoogle style={{fontSize:'25px'}}/></Link>
-                                <Link className='bg-zinc-400 p-3 mx-1 rounded-full'><FaGithub style={{fontSize:'25px'}}/></Link>
-                                <Link className='bg-zinc-400 p-3 mx-1 rounded-full'><FaLinkedin style={{fontSize:'25px'}}/></Link>
+                        <form onSubmit={handleSignInEmailAndPassword} className="card-body">
+                            <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input type="email" name='email' placeholder="email" className="input input-bordered" required/>
                             </div>
-                        </div>
-                    </form>
+                            <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
+                            <label className="label">
+                                <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
+                            </label>
+                            </div>
+                            <div className="form-control mt-6">
+                            <button className="btn btn-primary w-1/5">Login</button>
+                            </div>
+                            <div className='flex justify-between mx-5 mb-0 mt-3'>
+                                <p className='flex items-center	'>Login with-</p>
+                                <div className='flex justify-between'>
+                                    <Link onClick={handleSignGoogle} className='bg-zinc-400 p-3 mx-1 rounded-full'><FaGoogle style={{fontSize:'25px'}}/></Link>
+                                    <Link className='bg-zinc-400 p-3 mx-1 rounded-full'><FaGithub style={{fontSize:'25px'}}/></Link>
+                                    <Link className='bg-zinc-400 p-3 mx-1 rounded-full'><FaLinkedin style={{fontSize:'25px'}}/></Link>
+                                </div>
+                            </div>
+                        </form>
+                        <p className='text-center my-4'>Create a new account? <Link className='text-orange-600' to='/register'>Registration now</Link></p>
                     </div>
                 </div>
             </div>

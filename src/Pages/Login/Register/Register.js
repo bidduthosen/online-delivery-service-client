@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import register from '../../../assets/images/register/register.jpg'
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
@@ -50,6 +51,7 @@ const Register = () => {
                         <button className="btn btn-primary w-1/5">Register</button>
                         </div>
                     </form>
+                    <p className='text-center my-6'>Already Have an account Please? <Link className='text-orange-600' to='/login'>Login</Link></p>
                     </div>
                 </div>
             </div>
