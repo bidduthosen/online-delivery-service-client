@@ -3,7 +3,7 @@ import { FaAngleDown, FaCrown, FaDollarSign, FaStar, FaStarHalfAlt } from 'react
 import { Link } from 'react-router-dom';
 
 const ServiceCartInner = ({service}) => {
-    const  {_id,title, price, img, description, rating} = service;
+    const  { _id, title, price, img, description, rating} = service;
     return (
         <div className="card w-full bg-base-100 shadow-xl border-2 border-success-500">
             <figure><img src={img} alt="Shoes" /></figure>

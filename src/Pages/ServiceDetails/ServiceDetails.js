@@ -8,8 +8,7 @@ import CategoryReview from '../CategoryReview/CategoryReview';
 const ServiceDetails = () => {
     const {user} = useContext(AuthContext);
     const serviceDetails = useLoaderData();
-    const  {service_id, title, price, img, description, rating} = serviceDetails;
-
+    const  {_id, title, price, img, description, rating} = serviceDetails;
 
     const handleInReview = event =>{
         event.preventDefault()
@@ -19,7 +18,7 @@ const ServiceDetails = () => {
         const message = form.message.value;
         
         const review = {
-            service_id: service_id,
+            service_id: _id,
             name,
             title: title,
             img:img,
@@ -29,7 +28,6 @@ const ServiceDetails = () => {
             message,
             
         }
-        console.log(review)
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
@@ -39,10 +37,12 @@ const ServiceDetails = () => {
         })
         .then(res=> res.json())
         .then(data=> {
-            console.log(data);
-            toast.success('Review added done!')
-            form.reset();
+            if(data.acknowledged){
+                toast.success('Review added done!')
+                form.reset();
+            }
         })
+        .catch(err => console.error(err))
 
     }
     return (

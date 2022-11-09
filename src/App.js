@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='max-w-screen-full	mx-auto'>
       <RouterProvider router={router}></RouterProvider>
-      <Toaster></Toaster>
+      <Toaster position="top-right" reverseOrder={false}></Toaster>
     </div>
   );
 }

@@ -5,10 +5,12 @@ import ServiceItems from './ServiceItems';
 
 const Services = () => {
     const [services, setServices] = useState();
+    
     useEffect(()=>{
         fetch("http://localhost:5000/services")
         .then(res => res.json())
         .then(data => setServices(data.slice(3)))
+        .catch(err => console.log(err))
     },[])
     return (
         <div className='my-6'>
