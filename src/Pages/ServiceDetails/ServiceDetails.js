@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { FaCrown, FaDollarSign, FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import CategoryReview from '../CategoryReview/CategoryReview';
 
 const ServiceDetails = () => {
     const {user} = useContext(AuthContext);
@@ -28,6 +30,19 @@ const ServiceDetails = () => {
             
         }
         console.log(review)
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+        .then(res=> res.json())
+        .then(data=> {
+            console.log(data);
+            toast.success('Review added done!')
+            form.reset();
+        })
 
     }
     return (
@@ -94,6 +109,9 @@ const ServiceDetails = () => {
                     <p className='my-6 text-2xl w-2/5 mx-auto text-center border-4 border-double border-sky-400  p-4 hover:border-solid'>Please? <Link className='text-orange-600' to='/login'>Login</Link> to add a review</p>
                 </>
                 }
+            </div>
+            <div>
+                <CategoryReview title={title}></CategoryReview>
             </div>
         </div>
     );

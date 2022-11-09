@@ -33,7 +33,7 @@ const Login = () => {
                 console.log('google sign user', user);
                 toast.success('Google sign in done');
             })
-            .then(err=> console.error('err', err))
+            .catch(err=> console.error('err', err))
     }
     return (
         <div>

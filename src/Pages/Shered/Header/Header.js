@@ -9,7 +9,7 @@ const Header = () => {
     const handleLogOut = ()=>{
         logout()
         .then(()=>{})
-        .then(err=> console.error(err))
+        .catch(()=>{})
     }
     const menuItems = <>
         <li>
