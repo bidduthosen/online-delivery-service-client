@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import rightArrow from '../../../assets/images/rightArrow.gif'
 
 const Header = () => {
     const {user, logout} = useContext(AuthContext);
@@ -43,35 +44,42 @@ const Header = () => {
 
                 {user ? 
                     <>
-                        <div className="dropdown dropdown-end mr-4">
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar  bg-slate-400">
-                                {user?.photoURL ? 
-                                <>
-                                    <div className="w-16 rounded-full">
-                                        <img src={user?.photoURL}  alt=''/>
-                                    </div>
-                                </>
-                                :
-                                <>
-                                    <div className="">
-                                        <FaUser className='flex justify-center items-center' style={{fontSize:'25px'}}></FaUser>
-                                    </div>
-                                </>
-                                }
+                        <div className='flex justify-center items-center'>
+                            <div className='flex justify-center items-center'>
+                                <p>Click</p>
+                                <img src={rightArrow} alt="" style={{width:'50px'}}/>
                                 
-                            </label>
-                            <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                <li>
-                                <Link className="justify-between">
-                                    {user ? 
-                                    <>{user?.displayName}</>
+                            </div>
+                            <div className="dropdown dropdown-end mr-4">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar  bg-slate-400">
+                                    {user?.photoURL ? 
+                                    <>
+                                        <div className="w-16 rounded-full">
+                                            <img src={user?.photoURL}  alt=''/>
+                                        </div>
+                                    </>
                                     :
-                                    "Unknown"
+                                    <>
+                                        <div className="">
+                                            <FaUser className='flex justify-center items-center' style={{fontSize:'25px'}}></FaUser>
+                                        </div>
+                                    </>
                                     }
-                                </Link>
-                                </li>
-                                <li><Link onClick={handleLogOut}>Logout</Link></li>
-                            </ul>
+                                    
+                                </label>
+                                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                    <li>
+                                    <Link className="justify-between">
+                                        {user ? 
+                                        <>{user?.displayName}</>
+                                        :
+                                        "Unknown"
+                                        }
+                                    </Link>
+                                    </li>
+                                    <li><Link onClick={handleLogOut}>Logout</Link></li>
+                                </ul>
+                            </div>
                         </div>
                     </>
                     :
