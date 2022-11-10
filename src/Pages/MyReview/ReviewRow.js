@@ -16,7 +16,7 @@ const ReviewRow = ({review, handleDelete}) => {
 
     
     return (
-        <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-5 py-6 px-3 border-4 shadow-xl rounded-lg'>
+        <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-5 py-6 px-3 border-4 shadow-xl rounded-lg border-orange-100 hover:border-orange-300'>
             <div className='flex justify-center md:justify-start items-center py-4'>
                 <img className='h-16 w-16 mr-3 rounded-full' src={photoURL} alt="" />
                 <div>

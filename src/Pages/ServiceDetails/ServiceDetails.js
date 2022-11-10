@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { FaCrown, FaDollarSign, FaStar, FaStarHalfAlt } from 'react-icons/fa';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 import CategoryReview from '../CategoryReview/CategoryReview';
@@ -9,6 +9,7 @@ import CategoryReview from '../CategoryReview/CategoryReview';
 const ServiceDetails = () => {
     const {user} = useContext(AuthContext);
     const serviceDetails = useLoaderData();
+    const location = useLocation();
     useTitle('Product information');
     const  {_id, title, price, img, description, rating} = serviceDetails;
 
@@ -52,7 +53,7 @@ const ServiceDetails = () => {
             <div className='m-3'>
                 <div className="card w-full bg-base-100 shadow-xl border-2 border-success-500 my-7">
                     <div className="font-bold text-3xl text-dark text-center py-3 mb-12 w-1/5 mx-auto border-b-8 border-secondary-900">Product information details</div>
-                    <figure><img src={img} alt="Shoes" /></figure>
+                    <figure><img className='h-40 w-40' src={img} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">
                         {title}
@@ -72,7 +73,7 @@ const ServiceDetails = () => {
                     <div className="hero py-10  bg-base-200">
                         <div className="hero-content w-4/5">
                             <div className="card flex-shrink-0 w-full shadow-2xl" style={{background:"#ffffffb5"}}>
-                            <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-sky-400  p-4 hover:border-solid">Check Out Form</div>
+                            <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-black rounded-xl  p-4 hover:border-solid">Check Out Form</div>
                             <form onSubmit={handleInReview}  className="card-body">
                                 <div className="form-control">
                                 <label className="label">
@@ -108,7 +109,7 @@ const ServiceDetails = () => {
                 </>
                 :
                 <>
-                    <p className='my-6 text-2xl w-2/5 mx-auto text-center p-4 hover:border-solid'>Please? <Link className='text-orange-600' to='/login'>Login</Link> to add a review</p>
+                    <p className='my-6 text-2xl w-2/5 mx-auto text-center p-4 hover:border-solid'>Please? <Link className='text-orange-600' to='/login' state={{from: location}} replace>Login</Link> to add a review</p>
                 </>
                 }
             </div>

@@ -5,8 +5,8 @@ const Blogs = () => {
     useTitle('blogs');
     return (
         <div className='my-12'>
-            <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-sky-400  p-4 hover:border-solid">Questions</div>
-            <div className="card w-4/5 mx-auto bg-zinc-300	 shadow-xl my-5">
+            <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-black rounded-xl  p-4 hover:border-solid">Questions</div>
+            <div className="card w-4/5 mx-auto bg-zinc-300 shadow-xl my-5">
                 <div className="card-body">
                     <h2 className="card-title">1. Difference between SQL and NoSQL?</h2>
                     <p><strong>Answer:</strong> SQL databases are vertically scalable, while NoSQL databases are horizontally scalable. SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores. SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.</p>

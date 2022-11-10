@@ -30,7 +30,7 @@ const Login = () => {
                 form.reset();
                 navigate(from, {replace: true});
             })
-            .then(err => console.error(err))
+            .catch(err => console.error(err))
     }
     const handleSignGoogle = () =>{
         signInGoogle(googleProvider)
@@ -38,6 +38,7 @@ const Login = () => {
                 const user = result.user;
                 console.log('google sign user', user);
                 toast.success('Google sign in done');
+                navigate(from, {replace: true});
             })
             .catch(err=> console.error('err', err))
     }

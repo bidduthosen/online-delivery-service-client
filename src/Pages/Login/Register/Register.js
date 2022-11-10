@@ -22,7 +22,7 @@ const Register = () => {
                 toast.success('Register has ben successfully');
                 form.reset()
             })
-            .then(err => console.error(err))
+            .catch(err => console.error(err))
     }
     return (
         <div>

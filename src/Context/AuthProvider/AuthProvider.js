@@ -39,6 +39,7 @@ const AuthProvider = ({children}) => {
 
     const value = {
         user,
+        loader,
         signInEmailAndPass,
         createANewUser,
         signInGoogle,

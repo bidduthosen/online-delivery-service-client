@@ -37,7 +37,7 @@ const MyReview = () => {
         <div>
             {reviews.length > 0 ? 
             <>
-                <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-sky-400  p-4 hover:border-solid">My Review</div>
+                <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-black rounded-xl  p-4 hover:border-solid">My Review</div>
                 {
                 reviews.map(review => <ReviewRow
                             key={review._id}

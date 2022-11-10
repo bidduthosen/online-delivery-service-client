@@ -20,7 +20,7 @@ const AddService = () => {
             rating,
             description
         }
-        console.log("add service",service)
+        // console.log("add service",service)
 
         fetch('http://localhost:5000/services', {
             method: 'POST',
@@ -41,9 +41,9 @@ const AddService = () => {
     return (
         <div>
             <div className="hero py-10  bg-base-200">
-                        <div className="hero-content w-4/5">
+                        <div className="hero-content w-3/5">
                             <div className="card flex-shrink-0 w-full shadow-2xl" style={{background:"#ffffffb5"}}>
-                            <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-sky-400  p-4 hover:border-solid">Add a Service</div>
+                            <div className="font-bold text-2xl text-dark text-center py-3 md:w-2/5 mx-auto my-6  border-4 border-double border-black rounded-xl  p-4 hover:border-solid">Add a Service</div>
                             <form onSubmit={handleAddService}  className="card-body">
                                 <div className="form-control">
                                 <label className="label">
