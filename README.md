@@ -1,5 +1,9 @@
 # Online delivery service
 
+live website: https://online-delivery-service-e157f.web.app/
+client site code : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-bidduthosen
+server site code : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-bidduthosen
+
 ## Features
 
 ### React installed and used

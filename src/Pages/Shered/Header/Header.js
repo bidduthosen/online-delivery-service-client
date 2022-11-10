@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
 import { FaUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import rightArrow from '../../../assets/images/rightArrow.gif'
 
 const Header = () => {
     const {user, logout} = useContext(AuthContext);
+    const navigate = useNavigate()
     const handleLogOut = ()=>{
-        logout()
-        .then(()=>{})
+        logout(()=> navigate("/"))
+        .then(()=> {})
         .catch(()=>{})
     }
     const menuItems = <>

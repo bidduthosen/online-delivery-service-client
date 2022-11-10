@@ -31,7 +31,7 @@ const ServiceDetails = () => {
             message,
             
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://online-delivery-service-server-lovat.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

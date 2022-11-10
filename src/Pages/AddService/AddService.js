@@ -22,7 +22,7 @@ const AddService = () => {
         }
         // console.log("add service",service)
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://online-delivery-service-server-lovat.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

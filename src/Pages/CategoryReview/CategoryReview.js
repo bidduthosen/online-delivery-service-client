@@ -6,7 +6,7 @@ const CategoryReview = ({title}) => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviews?title=${title}`)
+        fetch(`https://online-delivery-service-server-lovat.vercel.app/reviews?title=${title}`)
             .then(res => res.json())
             .then(data => {
                 setAddReview(data);

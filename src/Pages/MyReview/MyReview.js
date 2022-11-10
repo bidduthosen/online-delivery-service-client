@@ -11,7 +11,7 @@ const MyReview = () => {
 
     // console.log(reviews);
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://online-delivery-service-server-lovat.vercel.app/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     },[user?.email]);
@@ -19,7 +19,7 @@ const MyReview = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('are you sure delete your selected orders');
         if(proceed){
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://online-delivery-service-server-lovat.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

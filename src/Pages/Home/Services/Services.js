@@ -9,7 +9,7 @@ const Services = () => {
     useTitle("online delivery service")
     
     useEffect(()=>{
-        fetch("http://localhost:5000/services")
+        fetch("https://online-delivery-service-server-lovat.vercel.app/services")
         .then(res => res.json())
         .then(data => setServices(data.slice(0, 3)))
         .catch(err => console.log(err))
