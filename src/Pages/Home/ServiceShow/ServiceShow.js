@@ -3,7 +3,7 @@ import { FaClock, FaUserAlt } from 'react-icons/fa';
 
 const ServiceShow = () => {
     return (
-        <div className='grid grid-cols-4 gap-4 mx-4 my-12'>
+        <div className='grid grid-cols-4 gap-4 mx-4 my-20'>
             <div className=''>
                 <h2 className='text-black font-bold md:text-3xl text-center w-1/2 mx-auto'>Service shows good taste.</h2>
             </div>

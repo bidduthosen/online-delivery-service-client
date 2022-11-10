@@ -5,6 +5,7 @@ const About = () => {
     return (
         <div>
             <div className="font-bold text-3xl text-dark text-center py-3 mb-12 w-1/5 mx-auto border-b-8 border-secondary-900">About us</div>
+                <p className='w-3/5 mx-auto my-7 italic'>Delivery is the process of transporting goods from a source location to a predefined destination. Cargo is primarily delivered via roads and railroads on land, shipping lanes on the sea, and airline networks in the air.We're digital nomads, living a digital life! And one thing that we have learned over the course of this evolution is that whatever we want or need, can be obtained with just a few clicks on our beloved smart devices. Even the food - all kinds, to satiate our different cravings on different days of the week. It's really an era that has something for everyone - whether a consumer or a provider.</p>
             <div className='grid md:grid-cols-2'>
                 <div className=''>
                     <img src={calender} className='h-full' alt="" />

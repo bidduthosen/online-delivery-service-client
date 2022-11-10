@@ -1,11 +1,17 @@
 import React from 'react';
 import { FaCrown, FaDollarSign, FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const ServiceItems = ({service}) => {
     const  {title, price, img, description, rating} = service;
     return (
         <div className="card w-full bg-base-100 shadow-xl border-2 border-success-500 border-orange-100 hover:border-orange-300">
-            <figure><img src={img} alt="Shoes" /></figure>
+            <PhotoProvider>
+                <PhotoView src={img}>
+                <figure><img className='h-32 w-32' src={img} alt="Shoes" /></figure>
+                </PhotoView>
+            </PhotoProvider>
             <div className="card-body">
                 <h2 className="card-title">
                 {title}

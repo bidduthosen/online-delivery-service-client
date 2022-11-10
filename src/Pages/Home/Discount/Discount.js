@@ -4,6 +4,7 @@ import discount from '../../../assets/images/bnr.jpg'
 const Discount = () => {
     return (
         <div className='my-12'>
+            <div className="font-bold text-3xl text-dark text-center py-3 mb-12 w-1/5 mx-auto border-b-8 border-secondary-900">Order Discount</div>
             <div className="card bg-base-100 image-full z-0">
                 <figure className='relative'><img className='w-full' src={discount} alt="Shoes" /></figure>
                 <div className="">

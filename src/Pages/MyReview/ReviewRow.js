@@ -15,6 +15,10 @@ const ReviewRow = ({review, handleDelete}) => {
     },[service_id])
 
     
+    const handleUpdateUser = event =>{
+        event.preventDefault();
+        console.log(event)
+    }
     return (
         <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-5 py-6 px-3 border-4 shadow-xl rounded-lg border-orange-100 hover:border-orange-300'>
             <div className='flex justify-center md:justify-start items-center py-4'>
@@ -37,6 +41,8 @@ const ReviewRow = ({review, handleDelete}) => {
             <div className='flex justify-center md:justify-start items-center py-4'>
                     <h2 className='text-base'><strong className='underline hover:underline-offset-4'>message: </strong> {message.slice(1, 100) + '...'}</h2>
             </div>
+
+            {/* modal update */}
             <div className='flex justify-center lg:justify-end items-center py-4'>
                     <label htmlFor="my-modal-3"className="btn btn-active btn-ghost">Edit review</label>
                     <input type="checkbox" id="my-modal-3" className="modal-toggle" />
@@ -44,23 +50,23 @@ const ReviewRow = ({review, handleDelete}) => {
                     <div className="modal-box relative">
                         <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                         <div className="card flex-shrink-0 w-full max-w-sm ">
-                            <div className="card-body">
+                            <form className="card-body">
                                 <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Your Name</span>
                                 </label>
-                                <input type="text" placeholder="Name" className="input input-bordered" required/>
+                                <input type="text" defaultValue={name} placeholder="Name" className="input input-bordered" required/>
                                 </div>
                                 <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Your Email</span>
                                 </label>
-                                <input type="email" placeholder="email" className="input input-bordered" />
+                                <input type="email" defaultValue={email} placeholder="email" className="input input-bordered" />
                                 </div>
                                 <div className="form-control mt-6">
-                                <button className="btn btn-primary">Update</button>
+                                <button onClick={handleUpdateUser} className="btn btn-primary">Update</button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     </div>
