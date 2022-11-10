@@ -8,7 +8,10 @@ const CategoryReview = ({title}) => {
     useEffect(()=>{
         fetch(`http://localhost:5000/reviews?title=${title}`)
             .then(res => res.json())
-            .then(data => setAddReview(data))
+            .then(data => {
+                setAddReview(data);
+            })
+            .catch(err => console.log(err))
     },[title]);
 
     return (

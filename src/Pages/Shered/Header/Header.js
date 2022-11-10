@@ -17,7 +17,7 @@ const Header = () => {
             <Link to="/blog">blog</Link>
             {user && <>
                 <Link to="/review">My Review</Link>
-                <Link to="/blog">Add Service</Link>
+                <Link to="/addservice">Add Service</Link>
             </>}
         </li>
     </>
