@@ -1,8 +1,9 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import useTitle from '../../Hooks/useTitle';
 
 const AddService = () => {
-
+    useTitle('addService');
     const handleAddService = event =>{
         event.preventDefault()
         const form = event.target;
@@ -53,7 +54,7 @@ const AddService = () => {
 
                                 <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Photo URL, <small>please provide a imgbb link.</small></span>
+                                    <span className="label-text">Photo URL</span>
                                 </label>
                                 <input type="text" name='photo' placeholder="PhotoURL" className="input input-bordered" required/>
                                 </div>

@@ -5,9 +5,11 @@ import { FaGithub, FaGoogle, FaLinkedin } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../../assets/images/login/login.gif'
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import useTitle from '../../../Hooks/useTitle';
 
 const Login = () => {
     const {signInEmailAndPass, signInGoogle} = useContext(AuthContext);
+    useTitle('login')
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";

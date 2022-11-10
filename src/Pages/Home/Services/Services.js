@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../Hooks/useTitle';
 import ServiceItems from './ServiceItems';
 
 const Services = () => {
     const [services, setServices] = useState();
+    useTitle("online delivery service")
     
     useEffect(()=>{
         fetch("http://localhost:5000/services")

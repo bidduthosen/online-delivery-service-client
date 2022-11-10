@@ -1,10 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 import ServiceCartInner from './ServiceCartInner';
 
 const ServiceCart = () => {
     const services = useLoaderData();
-    console.log("cart service",services)
+    useTitle('services')
     return (
         <div className='my-6'>
             <div className="font-bold text-3xl text-dark text-center py-3 w-1/5 mx-auto border-b-8 border-secondary-900">All Services</div>

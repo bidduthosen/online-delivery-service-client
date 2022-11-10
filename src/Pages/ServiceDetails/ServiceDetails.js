@@ -3,11 +3,13 @@ import toast from 'react-hot-toast';
 import { FaCrown, FaDollarSign, FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import CategoryReview from '../CategoryReview/CategoryReview';
 
 const ServiceDetails = () => {
     const {user} = useContext(AuthContext);
     const serviceDetails = useLoaderData();
+    useTitle('Product information');
     const  {_id, title, price, img, description, rating} = serviceDetails;
 
     const handleInReview = event =>{
@@ -106,7 +108,7 @@ const ServiceDetails = () => {
                 </>
                 :
                 <>
-                    <p className='my-6 text-2xl w-2/5 mx-auto text-center border-4 border-double border-sky-400  p-4 hover:border-solid'>Please? <Link className='text-orange-600' to='/login'>Login</Link> to add a review</p>
+                    <p className='my-6 text-2xl w-2/5 mx-auto text-center p-4 hover:border-solid'>Please? <Link className='text-orange-600' to='/login'>Login</Link> to add a review</p>
                 </>
                 }
             </div>

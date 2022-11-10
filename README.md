@@ -1,4 +1,20 @@
-# Getting Started with Create React App
+# Online delivery service
+
+## Features
+
+### React installed and used
+### React router used in our projects
+### React tailwind css framework used
+### React Tailwind CSS component library daisy UI used
+### React Hot toast
+### React Icons used
+### Navbar conditional rendering used if users login then show the user profile , name , login out , add service and my review or not login user . show this  register and login button see you user.
+### data  hosting on the database. The database loaded  MongoDB 
+### service page, about page, discount page etc.
+
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

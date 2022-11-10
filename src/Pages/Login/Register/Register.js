@@ -3,9 +3,11 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import register from '../../../assets/images/register/register.jpg'
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import useTitle from '../../../Hooks/useTitle';
 
 const Register = () => {
     const {createANewUser} = useContext(AuthContext);
+    useTitle('register')
 
     const handleCreateNewUser = event =>{
         event.preventDefault();

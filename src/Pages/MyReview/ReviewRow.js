@@ -28,7 +28,7 @@ const ReviewRow = ({review, handleDelete}) => {
                 {reviewService?.img && 
                 
                 <img className='h-32 w-32 mr-3' src={reviewService?.img} alt="" />
-            }
+                }
                 <div>
                     <h1 className='text-xl '>{title}</h1>
                     <div className='flex md:justify-start items-center'><FaStar className='mr-1'/>{rating}</div>
@@ -38,7 +38,32 @@ const ReviewRow = ({review, handleDelete}) => {
                     <h2 className='text-base'><strong className='underline hover:underline-offset-4'>message: </strong> {message.slice(1, 100) + '...'}</h2>
             </div>
             <div className='flex justify-center lg:justify-end items-center py-4'>
-                <button className="btn btn-active btn-ghost">Update</button>
+                    <label htmlFor="my-modal-3"className="btn btn-active btn-ghost">Edit review</label>
+                    <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+                    <div className="modal">
+                    <div className="modal-box relative">
+                        <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                        <div className="card flex-shrink-0 w-full max-w-sm ">
+                            <div className="card-body">
+                                <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Your Name</span>
+                                </label>
+                                <input type="text" placeholder="Name" className="input input-bordered" required/>
+                                </div>
+                                <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Your Email</span>
+                                </label>
+                                <input type="email" placeholder="email" className="input input-bordered" />
+                                </div>
+                                <div className="form-control mt-6">
+                                <button className="btn btn-primary">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 <button onClick={()=>handleDelete(_id)} className="btn btn-ghost border-2 border-sky-500 mx-3"><FaTrash/></button>
             </div>
         </div>

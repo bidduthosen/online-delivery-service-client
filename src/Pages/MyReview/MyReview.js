@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import ReviewRow from './ReviewRow';
 
 const MyReview = () => {
     const {user} = useContext(AuthContext);
     const [reviews , setReviews] = useState([]);
+    useTitle('my review');
 
     // console.log(reviews);
     useEffect(()=>{
@@ -45,7 +47,7 @@ const MyReview = () => {
                 }
             </>
             : 
-            <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-sky-400  p-4 hover:border-solid">No reviews were added</div>}
+            <div className="font-bold text-2xl text-dark text-center py-3 md:w-1/5 mx-auto my-6  border-4 border-double border-red-300  p-4 hover:border-solid">No reviews were added</div>}
             
         </div>
     );
